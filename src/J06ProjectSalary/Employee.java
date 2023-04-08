@@ -5,7 +5,7 @@ public class Employee {
  private   String name;
  private   int salary;
  private  int workHours;
- private  int year
+ private  int year;
 
     public String getName() {
         return name;
