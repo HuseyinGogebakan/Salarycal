@@ -49,45 +49,31 @@ public class Employee {
 
     public double tax(){
 
-        double paymentOfTax = 0;
-
-        if (salary < 10000){
-            paymentOfTax = 0;
-        }else {
-            paymentOfTax = salary * 0.03;
-        }
-
-        return  paymentOfTax;
+        return  salary<1000 ? 0 : salary*0.03;
     }
 
 
     public int bonus(){
 
-        int paymentOfBonus = 0;
-        int addinitionalBonus = 50;
-
-        if (workHours > 40){
-            paymentOfBonus = (workHours - 40) * addinitionalBonus;
-        }
-
-        return paymentOfBonus;
+        int paymentOfBonus = 0, addinitionalBonus = 50;
+        return workHours>40 ? (workHours - 40) * addinitionalBonus : paymentOfBonus;
     }
 
     public double raiseSalary(){
 
-        int timeOfYear = 2021;
-        int sumOfYear = timeOfYear - year;
-        double raising = 0;
+        int timeOfYear = 2021,sumOfYear = timeOfYear - year;
+
 
         if (sumOfYear < 5){
-            raising = (salary+tax())*0.05;
-        }else if (sumOfYear < 15){
-            raising = (salary+tax())*0.1;
-        }else {
-            raising = (salary+tax())*0.2;
-        }
 
-        return raising;
+            return  (salary+tax())*0.05;
+
+        }else if (sumOfYear < 15){
+
+            return  (salary+tax())*0.1;
+
+        }else return  (salary+tax())*0.2;
+
     }
 
     @Override
